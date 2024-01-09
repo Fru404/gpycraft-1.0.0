@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: googlepycraft
+Version: 1.0.0
+Summary: A Python package for manipulating google sheets directly on any coding platform and perform CRUD process easily. Sheets can be stored and retrieved in firebase storage
+Requires-Dist: firebase-admin
+Requires-Dist: gspread
+Requires-Dist: oauth2client
+Requires-Dist: pandas
+Requires-Dist: PyYAML

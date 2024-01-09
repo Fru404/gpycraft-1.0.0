@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+googlepycraft/__init__.py
+googlepycraft/app_config.py
+googlepycraft/begin.py
+googlepycraft.egg-info/PKG-INFO
+googlepycraft.egg-info/SOURCES.txt
+googlepycraft.egg-info/dependency_links.txt
+googlepycraft.egg-info/requires.txt
+googlepycraft.egg-info/top_level.txt
+googlepycraft/fireStore/__init__.py
+googlepycraft/fireStore/firestoreupload.py
+googlepycraft/googleSheet/__init__.py
+googlepycraft/googleSheet/gsheetsdb.py

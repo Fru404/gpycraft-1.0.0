@@ -1,0 +1,5 @@
+firebase-admin
+gspread
+oauth2client
+pandas
+PyYAML
