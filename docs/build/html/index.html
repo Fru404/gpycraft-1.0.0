@@ -68,21 +68,24 @@
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <ol class="arabic">
-<li><p><strong>Firestore Upload Example</strong></p>
-<p>This is an example of how to use the Firestore Upload module:</p>
-<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python
-from gpycraft import firestoreupload</p>
-<p># Create an instance of FirestoreUpload
+<li><p><strong>Firestore Upload Example</strong>
+.. code-block:: bash</p>
+<blockquote>
+<div><p># Create an instance of FirestoreUpload
 uploader = firestoreupload.firestoreupload(credentials_path=’path/to/credentials.json’, storage_bucket=’your_storage_bucket’)</p>
 <p># Upload a file
 uploader.upload_file(local_file_path=’path/to/local/file.txt’)</p>
+</div></blockquote>
 </li>
-<li><p><strong>Google Sheets Database Example</strong></p>
-<p>from gpycraft import gsheetsdb</p>
+<li><p><strong>Google Sheets Database Example</strong>
+.. code-block:: bash</p>
+<blockquote>
+<div><p>from gpycraft import gsheetsdb</p>
 <p># Create an instance of GSheetsDB
 db = gsheetsdb.gsheetsdb(credentials_path=’path/to/credentials.json’, sheet_url=’your_sheet_url’, sheet_number=’your_sheet_number’)</p>
 <p># Read data from Google Sheets
 data = db.read_sheet(key=’your_key’, number_of_rows=5)</p>
+</div></blockquote>
 </li>
 </ol>
 </section>

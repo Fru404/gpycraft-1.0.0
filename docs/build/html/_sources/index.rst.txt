@@ -64,27 +64,24 @@ Examples
 --------
 
 1. **Firestore Upload Example**
+   .. code-block:: bash
+   
 
-   This is an example of how to use the Firestore Upload module:
+      # Create an instance of FirestoreUpload
+      uploader = firestoreupload.firestoreupload(credentials_path='path/to/credentials.json', storage_bucket='your_storage_bucket')
 
-   ```python
-   from gpycraft import firestoreupload
-
-   # Create an instance of FirestoreUpload
-   uploader = firestoreupload.firestoreupload(credentials_path='path/to/credentials.json', storage_bucket='your_storage_bucket')
-
-   # Upload a file
-   uploader.upload_file(local_file_path='path/to/local/file.txt')
+      # Upload a file
+      uploader.upload_file(local_file_path='path/to/local/file.txt')
 
 2. **Google Sheets Database Example**
+   .. code-block:: bash
+      from gpycraft import gsheetsdb
 
-   from gpycraft import gsheetsdb
+      # Create an instance of GSheetsDB
+      db = gsheetsdb.gsheetsdb(credentials_path='path/to/credentials.json', sheet_url='your_sheet_url', sheet_number='your_sheet_number')
 
-   # Create an instance of GSheetsDB
-   db = gsheetsdb.gsheetsdb(credentials_path='path/to/credentials.json', sheet_url='your_sheet_url', sheet_number='your_sheet_number')
-
-   # Read data from Google Sheets
-   data = db.read_sheet(key='your_key', number_of_rows=5)
+      # Read data from Google Sheets
+      data = db.read_sheet(key='your_key', number_of_rows=5)
 
 Configuration
 -------------
