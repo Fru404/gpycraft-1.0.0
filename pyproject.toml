@@ -1,0 +1,22 @@
+# pyproject.toml
+
+[tool.poetry]
+name = "gpycraft"
+version = "1.0.0"
+description = "A Python package for Firebase and Google Sheets integration."
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+# Add your project dependencies here
+# For example, if you are using gspread, firebase-admin, requests, and pandas:
+dependencies = [
+    "gspread",
+    "firebase-admin",
+    "requests",
+    "pandas",
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
