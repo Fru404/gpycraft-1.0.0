@@ -5,9 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>gpycraft Documentation &#8212; gpycraft 1.0.0 documentation</title>
+    <title>Introduction &#8212; gpycraft 1.0.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/better.css?v=58ad701a" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e20137da" />
     <script src="_static/documentation_options.js?v=8d563738"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -35,70 +36,50 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="gpycraft-documentation">
-<h1>gpycraft Documentation<a class="headerlink" href="#gpycraft-documentation" title="Link to this heading">¶</a></h1>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/Fru404/Web/main/1497441839.svg"><img alt="https://raw.githubusercontent.com/Fru404/Web/main/1497441839.svg" class="align-right" height="200" src="https://raw.githubusercontent.com/Fru404/Web/main/1497441839.svg" width="150" /></a>
+  <a class="reference internal image-reference" href="https://raw.githubusercontent.com/Fru404/Web/main/1497441839.svg"><img alt="https://raw.githubusercontent.com/Fru404/Web/main/1497441839.svg" class="align-right" height="200" src="https://raw.githubusercontent.com/Fru404/Web/main/1497441839.svg" width="150" /></a>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
-<p><cite>gpycraft</cite> is a versatile Python package designed to simplify common tasks related to Firebase and Google Sheets integration. Whether you need to upload files to Firebase Storage, interact with Firestore, or manage data in Google Sheets as a database, <cite>gpycraft</cite> provides intuitive modules to streamline these operations.</p>
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h1>
+<div class="justified gpycraft is a versatile python package designed to simplify common tasks related firebase and google sheets integration whether you need upload files storage interact with firestore or manage data in as database provides intuitive modules streamline these operations docutils container">
 <p>Key Features:
 - <strong>Firestore Upload Module:</strong> Simplifies uploading files to Firebase Storage with convenient methods and error handling.
-- <strong>Google Sheets Database Module:</strong> Enables seamless communication with Google Sheets, allowing users to read and manipulate data effortlessly.
-- <strong>App Config Module:</strong> Offers configuration capabilities through the <cite>Admin</cite> class, providing easy access to essential variables.</p>
-<p>Installation is straightforward using the Python Package Index (PyPI):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>gpycraft
-</pre></div>
-</div>
+- <strong>Google Sheets Database Module:</strong> Enables seamless communication with Google Sheets, allowing users to read and manipulate data effortlessly.</p>
 <p>Get started with <cite>gpycraft</cite> and make your Firebase and Google Sheets integrations a breeze!</p>
+</div>
 </section>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
 <p>To install <cite>gpycraft</cite>, you can use <cite>pip</cite>. Open your terminal and run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>gpycraft
 </pre></div>
 </div>
 </section>
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
+<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h1>
 <ol class="arabic simple">
 <li><p><strong>Firestore Upload Module</strong></p></li>
 <li><p><strong>Google Sheets Database Module</strong></p></li>
 </ol>
 </section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
-<ol class="arabic">
-<li><p><strong>Firestore Upload Example</strong>
-.. code-block:: bash</p>
-<blockquote>
-<div><p># Create an instance of FirestoreUpload
-uploader = firestoreupload.firestoreupload(credentials_path=’path/to/credentials.json’, storage_bucket=’your_storage_bucket’)</p>
-<p># Upload a file
-uploader.upload_file(local_file_path=’path/to/local/file.txt’)</p>
-</div></blockquote>
-</li>
-<li><p><strong>Google Sheets Database Example</strong>
-.. code-block:: bash</p>
-<blockquote>
-<div><p>from gpycraft import gsheetsdb</p>
-<p># Create an instance of GSheetsDB
-db = gsheetsdb.gsheetsdb(credentials_path=’path/to/credentials.json’, sheet_url=’your_sheet_url’, sheet_number=’your_sheet_number’)</p>
-<p># Read data from Google Sheets
-data = db.read_sheet(key=’your_key’, number_of_rows=5)</p>
-</div></blockquote>
-</li>
-</ol>
+<section id="example">
+<h1>Example<a class="headerlink" href="#example" title="Link to this heading">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Create<span class="w"> </span>an<span class="w"> </span>instance<span class="w"> </span>of<span class="w"> </span>FirestoreUpload
+<span class="go">uploader = firestoreupload.firestoreupload(credentials_path=&#39;path/to/credentials.json&#39;, storage_bucket=&#39;your_storage_bucket&#39;)</span>
+
+<span class="gp"># </span>Upload<span class="w"> </span>a<span class="w"> </span>file
+<span class="go">uploader.upload_file(local_file_path=&#39;path/to/local/file.txt&#39;)</span>
+
+<span class="go">from gpycraft import gsheetsdb</span>
+
+<span class="gp"># </span>Create<span class="w"> </span>an<span class="w"> </span>instance<span class="w"> </span>of<span class="w"> </span>GSheetsDB
+<span class="go">db = gsheetsdb.gsheetsdb(credentials_path=&#39;path/to/credentials.json&#39;, sheet_url=&#39;your_sheet_url&#39;, sheet_number=&#39;your_sheet_number&#39;)</span>
+
+<span class="gp"># </span>Read<span class="w"> </span>data<span class="w"> </span>from<span class="w"> </span>Google<span class="w"> </span>Sheets
+<span class="go">data = db.read_sheet(key=&#39;your_key&#39;, number_of_rows=5)</span>
+</pre></div>
+</div>
 </section>
-<section id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
-<p>Here you can find information about how to configure <cite>gpycraft</cite> using the <cite>Admin</cite> class.</p>
-</section>
-<section id="indices-and-tables">
-<h2>Indices and Tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
-</section>
+<section id="basic-features">
+<h1>Basic Features<a class="headerlink" href="#basic-features" title="Link to this heading">¶</a></h1>
 </section>
 
 
@@ -111,15 +92,11 @@ data = db.read_sheet(key=’your_key’, number_of_rows=5)</p>
   <div>
     <h3><a href="#">Table of Contents</a></h3>
     <ul>
-<li><a class="reference internal" href="#">gpycraft Documentation</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#">Introduction</a></li>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#usage">Usage</a></li>
-<li><a class="reference internal" href="#examples">Examples</a></li>
-<li><a class="reference internal" href="#configuration">Configuration</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and Tables</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#basic-features">Basic Features</a></li>
 </ul>
 
   </div>

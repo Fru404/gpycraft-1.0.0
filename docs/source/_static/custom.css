@@ -1,0 +1,7 @@
+body {
+    background-color: whitesmoke;
+    font-family: 'Roboto Mono', monospace;
+}
+.justified {
+    text-align: justify;
+}

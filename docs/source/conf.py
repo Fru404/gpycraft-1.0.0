@@ -31,6 +31,10 @@ exclude_patterns = ['_build','Thumbs.db','DS_Store']
 
 html_theme = 'better'
 html_theme_path = [better.better_theme_path]
+html_static_path = ['_static']
+html_css_files = [
+    'custom.css',
+]
 
 def linkcode_resolve(domain, info):
     """
