@@ -3,7 +3,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import json
 import pandas as pd
-from googlepycraft.app_config import Admin
+from gpycraft.app_config import Admin
 import os
 # Define a class for interacting with Google Sheets as a database
 class gsheetsdb:

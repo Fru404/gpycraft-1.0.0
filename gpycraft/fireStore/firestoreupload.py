@@ -8,7 +8,7 @@ import yaml
 import datetime
 import random
 import string
-from googlepycraft.app_config import Admin
+from gpycraft.app_config import Admin
 
 import logging
 from logging.handlers import RotatingFileHandler

@@ -5,7 +5,7 @@ import sys
 import os
 import time
 
-def run_begin_script():
+def begin():
     script_path = os.path.join(os.path.dirname(__file__), 'begin.py')
     subprocess.run([sys.executable, script_path])
 
@@ -26,4 +26,7 @@ def show_loading_animation():
 show_loading_animation()
 
 # Running begin.py script
-run_begin_script()
+begin()
+
+
+
