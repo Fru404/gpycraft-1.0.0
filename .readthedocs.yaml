@@ -31,5 +31,4 @@ python:
   install:
     - requirements: docs/requirements.txt
 commands:
-  - echo "Hello, Read the Docs!"
   - bash  make.sh
