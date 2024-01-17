@@ -1,4 +1,3 @@
-
 .. image:: https://raw.githubusercontent.com/Fru404/Web/main/1497441839.svg
    :align: right
    :width: 150
@@ -7,22 +6,30 @@
 Introduction
 ------------
 .. container:: justified
-      `gpycraft` is a versatile Python package designed to simplify common tasks related to Firebase and Google Sheets integration. Whether you need to upload files to Firebase Storage, interact with Firestore, or manage data in Google Sheets as a database, `gpycraft` provides intuitive modules to streamline these operations.
+   `gpycraft` is a versatile Python package designed to simplify common tasks related to Firebase and Google Sheets integration. Whether you need to upload files to Firebase Storage, interact with Firestore, or manage data in Google Sheets as a database, `gpycraft` provides intuitive modules to streamline these operations.
 
-      Key Features:
-      - **Firestore Upload Module:** Simplifies uploading files to Firebase Storage with convenient methods and error handling.
-      - **Google Sheets Database Module:** Enables seamless communication with Google Sheets, allowing users to read and manipulate data effortlessly.
+   Key Features:
+   - **Firestore Upload Module:** Simplifies uploading files to Firebase Storage with convenient methods and error handling.
+   - **Google Sheets Database Module:** Enables seamless communication with Google Sheets, allowing users to read and manipulate data effortlessly.
 
-      Get started with `gpycraft` and make your Firebase and Google Sheets integrations a breeze!
+   Get started with `gpycraft` and make your Firebase and Google Sheets integrations a breeze!
 
 Installation
 ------------
-
 To install `gpycraft`, you can use `pip`. Open your terminal and run:
 
 .. code-block:: bash
 
-   pip install gpycraft
+   >>  pip install gpycraft
+
+On terminal run the command `begin` to create files for a smooth start:
+
+
+.. code-block:: bash
+
+   >> begin
+
+
 
 Usage
 -----
@@ -69,3 +76,11 @@ Example
 
 Basic Features
 --------------
+
+
+
+.. toctree::
+   :maxdepth: 1
+
+   googlesheet
+   firebase
