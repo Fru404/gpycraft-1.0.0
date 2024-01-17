@@ -86,18 +86,30 @@ class gsheetsdb:
             raise
 
     def in_pd(self):
-        """
-        Convert data from Google Sheets to a Pandas DataFrame.
+            """
+            Convert data from Google Sheets to a Pandas DataFrame.
 
-        :return: Pandas DataFrame.
-        """
-        sheet = self.read_sheet()
-        if not sheet:
-            pass
+            :return: Pandas DataFrame.
+            """
+            credentials_path = self.admin_instance.credentials_path
+            sheetNumber = os.environ.get('SHEET_NUMBER')
+            sheet_url = self.admin_instance.sheet_url(sheetNumber)
+            # Set up authentication and authorization
+            scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+            creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_path, scope)
+            client = gspread.authorize(creds)
+            spreadsheet = client.open_by_url(sheet_url)
+            self.read_sheet()
+            
+            # Get the first (default) sheet
+            sheet = spreadsheet.sheet1
 
-        # Convert the list of dictionaries to a Pandas DataFrame
-        df = pd.DataFrame(sheet)
-        return df
+            # Get all values from the sheet
+            all_values = sheet.get_all_values()
+            # Convert the list of dictionaries to a Pandas DataFrame
+            df = pd.DataFrame(all_values[1:], columns=all_values[0])
+            return df
+
 
     def in_json(self, target_key=None, num_rows=None, start_index=None, end_index=None):
         """
