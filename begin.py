@@ -3,9 +3,9 @@ import os
 # Content to be written in workfile.py
 workfile_content = """
 # import package
-from googlepycraft.googleSheet.gsheetsdb import gsheetsdb as gb
-from googlepycraft.fireStore.firestoreupload import firestoreupload
-from googlepycraft.app_config import Admin
+from gpycraft.googleSheet.gsheetsdb import gsheetsdb as gb
+from gpycraft.fireStore.firestoreupload import firestoreupload
+from gpycraft.app_config import Admin
 import os
 
 # Instantiate the Admin class
@@ -17,11 +17,10 @@ sheetNumber = os.environ.get('SHEET_NUMBER')
 sheet_url = admin_instance.sheet_url(sheet_number=sheetNumber)
 storage_bucket = admin_instance.storage_bucket
 
-# Now you can use these variables as needed
-gsheets_instance = gb(credentials_path, sheet_url, sheet_number=sheetNumber)
+
 
 # begin by instanciating the class
-gsheets_instance = gb(credentials_path, sheet_url)
+gsheets_instance = gb(credentials_path, sheet_url, sheet_number=sheetNumber)
 fire_instance = firestoreupload(storage_bucket=storage_bucket, credentials_path=credentials_path)
 """
 # Content to be written in app_config.yaml

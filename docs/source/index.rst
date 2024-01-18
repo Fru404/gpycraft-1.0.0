@@ -22,15 +22,46 @@ To install `gpycraft`, you can use `pip`. Open your terminal and run:
 
    >>  pip install gpycraft
 
-On terminal run the command `begin` to create files for a smooth start:
+On terminal run the command `begin` to create files(app_config.yaml and workfile.py) for a smooth start:
 
 
 .. code-block:: bash
 
    >> begin
 
+Or just create file manually then copy and paste content to the files.
+
+In `app_config.yaml`, you can include more than one googlesheet.
+.. code-block:: bash
+
+      credentials_path: credentials.json
+      storage_bucket: 
+      sheets:
+      - sheet_number: 
+         sheet_name: 
+         sheet_url: 
+The `workfile.py` already contains all neccessary module importation and initialization, all is left is to start working.
+.. code-block:: bash
+
+      from gpycraft.googleSheet.gsheetsdb import gsheetsdb as gb
+      from gpycraft.fireStore.firestoreupload import firestoreupload
+      from gpycraft.app_config import Admin
+      import os
+
+      # Instantiate the Admin class
+      admin_instance = Admin()
+      os.environ['SHEET_NUMBER'] = ''
+      # Access the variables from the admin instance
+      credentials_path = admin_instance.credentials_path
+      sheetNumber = os.environ.get('SHEET_NUMBER')
+      sheet_url = admin_instance.sheet_url(sheet_number=sheetNumber)
+      storage_bucket = admin_instance.storage_bucket
 
 
+
+      # begin by instanciating the class
+      gsheets_instance = gb(credentials_path, sheet_url, sheet_number=sheetNumber)
+      fire_instance = firestoreupload(storage_bucket=storage_bucket, credentials_path=credentials_path)
 Usage
 -----
 

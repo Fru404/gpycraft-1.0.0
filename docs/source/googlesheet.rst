@@ -13,16 +13,18 @@ Enable Google Sheets API in Google Console
 2. Search for `google sheet` 
 3. Enable the Google sheet API
 
+After Enabling the google sheet API, copy the link of googlesheet, make sure it is shareable.
+
 Generating Credentials
 ^^^^^^^^^^^^^^^^^^^^^
 
 To generate credentials:
 
-1. ...
-2. ...
-3. ...
+1. On console, API and SERVICES click on credentials. 
+2. In Service account section you will see yor default App Engine default service account click on it.
+3. In `App Engine default service account` click on keys>ADD keys>Create New keys. A json document will be downloaded. Rename the json file as `Credentials.json`(NOTE: Do not expose this file make sure to include it in .gitignore)
 
-Now, you can create a hyperlink to the anchor you defined earlier. To do this, use the following syntax:
+Include the credentials.json in working repository.
 
 
 
