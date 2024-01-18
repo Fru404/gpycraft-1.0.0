@@ -64,4 +64,5 @@ json_data = db.in_json(target_key='column_name', num_rows=5, start_index=1, end_
 # Example usage of FireStoreUpload
 uploader = FireStoreUpload(credentials_path='path/to/firebase_credentials.json', storage_bucket='your_storage_bucket_name')
 uploader.upload_file(local_file_path='path/to/local/file.txt')
+
 Note: Make sure to replace placeholders such as path/to/credentials.json, your_spreadsheet_id, your_storage_bucket_name, etc., with your actual file paths and identifiers.
