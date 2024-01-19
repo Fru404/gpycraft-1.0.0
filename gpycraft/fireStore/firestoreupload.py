@@ -136,10 +136,10 @@ class firestoreupload:
                 'time': current_time,
                 '#':'################################################'
             }
-
+            os.makedirs('catalog', exist_ok=True)
             message_yml = os.path.join('catalog', 'dossier.yaml')
 
-            os.makedirs('catalog', exist_ok=True)
+            
 
             if os.path.exists(message_yml):
                 with open(message_yml, 'r') as existing_message:
