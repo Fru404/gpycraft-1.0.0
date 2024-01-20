@@ -78,12 +78,12 @@ class firestoreupload:
                 
                 print(f'{yaml.dump(message,default_flow_style=False)} Document uploaded')
                 reference = existing_data['ref']
-                logger.info(f' file with reference {reference} Document uploaded')
+                logger.info(f' file with reference {reference}  uploaded')
             except Exception as e:
                 print(f'Error overwriting message: {e}')
                 logger.debug(f'Error overwriting message: {e}')
         else:
-            logger.info(f'Not uploaded')
+            logger.info(f' file {reference} Not uploaded')
             print(f'{yaml.dump(message,default_flow_style=False)} Not uploaded')
 
         
@@ -134,7 +134,7 @@ class firestoreupload:
                 'file': fileName,
                 'url': self.file_url,
                 'time': current_time,
-                '#':'################################################'
+                '#':'----------------------------------------------'
             }
             os.makedirs('catalog', exist_ok=True)
             message_yml = os.path.join('catalog', 'dossier.yaml')
@@ -148,13 +148,13 @@ class firestoreupload:
                         self.overwrite_message_in_yaml(existing_data, message, message_yml)
                     else:
                         self.save_message_to_yaml(message, message_yml)
-                        logger.info('file uploaded')
+                        logger.info(f' {fileName} file uploaded')
                         print('file uploaded')
             else:
                   logger.info('file not recieved')
                   print('file not recieved')
         except Exception as e:
-                logger.error(f"Error uploading file: {e}")
+                logger.error(f" {fileName} Error uploading file: {e}")
                 print(f"Error uploading file: {e}")
                 
     def get_file(self,file_url,local_folder='local'):
@@ -175,10 +175,10 @@ class firestoreupload:
             # Save the file locally
             with open(file_name, 'wb') as file:
                 file.write(response.content)
-            logger.info(f" {file_name}downloaded successfully.")
+            logger.info(f" {file_name} downloaded successfully.")
             print(f"File '{file_name}' downloaded successfully.")
 
         except Exception as e:
-            logger.error(f"Error downloading file: {e}")
+            logger.error(f" {file_name} Error downloading this file: {e}")
             print(f"Error downloading file: {e}")
             

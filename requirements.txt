@@ -3,3 +3,4 @@ gspread
 oauth2client
 pandas
 PyYAML
+tqdm
