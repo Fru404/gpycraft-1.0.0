@@ -30,7 +30,11 @@ formatter = logging.Formatter('%(asctime)s- %(name)s - %(levelname)s - %(message
 # Replace 'your_log_file.log' with the desired log file name
 # Set maxBytes to the maximum size of each log file
 # Set backupCount to the number of backup files to keep
-file_handler = RotatingFileHandler('logFile.log', maxBytes=1024, backupCount=3)
+if not os.path.exists('log'):
+   os.makedirs('log')
+logfolder='log'
+logpath=os.path.join(logfolder,'gpycraft.log')
+file_handler = RotatingFileHandler(logpath, maxBytes=1024, backupCount=3)
 file_handler.setFormatter(formatter)
 
 # Add the file handler to the logger
@@ -137,22 +141,22 @@ class firestoreupload:
                 '#':'----------------------------------------------'
             }
             os.makedirs('catalog', exist_ok=True)
+           
             message_yml = os.path.join('catalog', 'dossier.yaml')
 
             
 
-            if os.path.exists(message_yml):
-                with open(message_yml, 'r') as existing_message:
-                    existing_data = yaml.safe_load(existing_message)
-                    if existing_data and 'ref' in existing_data and existing_data['file'] == fileName:
-                        self.overwrite_message_in_yaml(existing_data, message, message_yml)
-                    else:
-                        self.save_message_to_yaml(message, message_yml)
-                        logger.info(f' {fileName} file uploaded')
-                        print('file uploaded')
-            else:
-                  logger.info('file not recieved')
-                  print('file not recieved')
+           
+            with open(message_yml, 'r') as existing_message:
+                existing_data = yaml.safe_load(existing_message)
+                if existing_data and 'ref' in existing_data and existing_data['file'] == fileName:
+                    self.overwrite_message_in_yaml(existing_data, message, message_yml)
+                else:
+                    self.save_message_to_yaml(message, message_yml)
+                    logger.info(f' {fileName} file uploaded')
+                    print('file uploaded')
+            
+                
         except Exception as e:
                 logger.error(f" {fileName} Error uploading file: {e}")
                 print(f"Error uploading file: {e}")

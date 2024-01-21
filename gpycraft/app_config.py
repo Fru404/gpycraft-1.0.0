@@ -20,7 +20,7 @@ class Admin:
         sheet_number_str = str(sheet_number)
 
         # Check if the sheet number exists
-        if sheet_number_str in self.sheets:
+        if sheet_number_str in self.sheets or sheet_number_str=='0':
             return self.sheets[sheet_number_str]['sheet_url']
         else:
             raise ValueError(f"Sheet with number {sheet_number_str} not found")
@@ -62,7 +62,10 @@ class Admin:
                 sheet_name: 
                 sheet_url: 
         """)
-
+        catalog=os.makedirs('catalog')
+        os.path.join(catalog,'dossier.yaml')
+        with open('dossier.yaml','a') as file:
+            file.write("#dossier.yaml keeps track of file uploads")
         # Write content to workfile.py
         with open('workfile.py', 'w') as file:
             file.write(workfile_content)
