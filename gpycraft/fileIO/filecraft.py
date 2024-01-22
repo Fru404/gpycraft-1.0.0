@@ -32,65 +32,79 @@ class filecraft:
         # Display the DataFrame
         return df
     
-    def pd_asdotfile(self, df, filePath=''):
+    def pd_asdotfile(self, df, filePath='',spacing=10):
         """
-         convert a dataframe to dotfile
+        Convert a dataframe to dotfile
         """
         if not filePath:
-            filePath = 'default_dotfile.'  # Provide a default file name or modify as needed
+            filePath = 'default_dotfile.txt'  # Provide a default file name or modify as needed
 
         # Convert the DataFrame to a dotfile format
         dotfile_content = ''
-        
-        # Add column names as the first line
-        dotfile_content += ' '.join(df.columns) + ". \n"
+
+        # Add column names as the first line with increased spacing
+        dotfile_content += ' '.join([f'{column:<{spacing}}' for column in df.columns])+".\n"
 
         # Add rows with data
         for _, row in df.iterrows():
-            dotfile_content += ' '.join([str(value) for value in row]) + ". \n"
+            # Increase spacing between each column value
+            dotfile_content += ' '.join([f'{str(value):<{spacing}}' for value in row])+".\n"
 
         # Write the dotfile content to the specified file path
         with open(filePath, 'w') as file:
             file.write(dotfile_content)
-        
 
 
 
-    def xl_asdotfile(self,xl_filePath='',dotfile_path='',column=None):
-        self.xl_filePath=xl_filePath #path to excel file
-        seperation=radix()
+    def xl_asdotfile(self, xl_filePath='', column=None, engine='openpyxl', spacing=10):
+        self.xl_filePath = xl_filePath  # path to excel file
+        separation = radix()
+
         """
-         This method converts sheet to dotfile format
-         1. convert sheet to DataFrame
-         2. convert DataFrame to dotfile
+        This method converts sheet to dotfile format
+        1. convert sheet to DataFrame
+        2. convert DataFrame to dotfile
         """
 
-        
-        data=pd.read_excel(xl_filePath) #1
-        number_of_columns=data.shape[1]
-        columns=data.columns.to_list()
-        number_of_rows=data.shape[0]
-        FILEMETADATA={
-            'name of file':xl_filePath,
+        data = pd.read_excel(xl_filePath, engine=engine)  # 1
+        number_of_columns = data.shape[1]
+        columns = data.columns.to_list()
+        number_of_rows = data.shape[0]
+
+        xl_name = os.path.basename(xl_filePath)
+
+        metafile = os.path.splitext(xl_name)[0] + ".json"
+        FILEMETADATA = {
+            'name of file': xl_name,
             'number of columns': number_of_columns,
-            'columns' : columns,
-            'number of rows' : number_of_rows
+            'columns': columns,
+            'number of rows': number_of_rows,
+            'spacing': spacing,
         }
-        print(f'FIle : {xl_filePath}______FILEMETADATA: {FILEMETADATA} \n')
+
+        print(f'File: {xl_name}______FILEMETADATA: {FILEMETADATA}\n')
         directory = '_METADATA'
         os.makedirs(directory, exist_ok=True)
 
         # Create and append JSON data to file
-        file_metadata_path = os.path.join(directory, 'FILEMETADATA.txt')
+        file_metadata_path = os.path.join(directory, metafile)
         with open(file_metadata_path, 'a') as file:
-            # Write a newline before appending to separate previous content
-            file.write('\n')
+            # Move the cursor to the end of the file before appending
+            file.seek(0, os.SEEK_END)
+            if file.tell() == 0:
+                # If the file is empty, add an opening bracket
+                file.write('[')
+            else:
+                # If not the first entry, add a comma and newline before appending
+                file.write(',\n')
             json.dump(FILEMETADATA, file, indent=4)
-        convert=seperation.to_comma(data,column=column)
-        
-        as_dotfile=self.pd_asdotfile(convert,filePath=dotfile_path)
-        
-        print(f'FIle :  {dotfile_path} created')
+
+        convert = separation.to_comma(data, column=column)
+
+        dotfile_path = os.path.splitext(xl_name)[0] + ".txt"
+        as_dotfile = self.pd_asdotfile(convert, filePath=dotfile_path, spacing=spacing)
+
+        # print(f'File: {dotfile_path} created')
         return as_dotfile
     
     def dotfile_asxl(self, dotfile_name, sheet_name='Sheet1', engine='xlsxwriter',columnAdd=[],fieldNumber=None, byPass=False):
@@ -114,7 +128,7 @@ class filecraft:
                 if dotfile_df.shape[1] == fieldNumber and byPass is not False:
                     # Extract the file name without extension
                     excel_file_name = os.path.splitext(dotfile_name)[0]
-                    excel_file_name = f'default_{excel_file_name}.xlsx'  # Provide a default file name or modify as needed
+                    excel_file_name = f'{excel_file_name}.xlsx'  # Provide a default file name or modify as needed
                     dotfile_df.to_excel(excel_file_name, index=False, header=True, sheet_name=sheet_name, engine=engine)
                     print(f'File {excel_file_name} created ')
                     print('\033[93m'+'NOTE: If byPass is True, .xlsx file will be created without checking if column added was found')
@@ -143,5 +157,5 @@ class filecraft:
                     
 
         except Exception as e:
-            print(f"Error: {e} : columAdd is None, include column added")
+            print(f"Error: {e} :")
             return None

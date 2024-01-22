@@ -1,0 +1,160 @@
+
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}
+{
+    "name of file": "/workspaces/gpycraft-1.0.0/sensor1.xlsx",
+    "number of columns": 2,
+    "columns": [
+        "Temperature",
+        "Humidity"
+    ],
+    "number of rows": 39,
+    "spacing": 10
+}

@@ -1,0 +1,12 @@
+credentials_path: credentials.json
+storage_bucket: realtime-375815.appspot.com
+sheets:
+  - sheet_number: '0' #by default the sheet starts with 0, do not modify this field
+    sheet_name: 'none'
+    sheet_url: 'none'
+  - sheet_number: '1'
+    sheet_name: User Data
+    sheet_url: https://docs.google.com/spreadsheets/d/15FfUKjivLLftJ3R0eDVuxUYRFJd6pyWWOc8vWxTiLlA/edit#gid=0
+  - sheet_number: '3'
+    sheet_name: Fininacial
+    sheet_url: https://docs.google.com/spreadsheets/d/1tLRKclbBwLBDFtxQvw1ZzvQwaOXN3CSuFayx-GIyZQA/edit?usp=sharing
