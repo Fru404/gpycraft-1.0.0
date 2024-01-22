@@ -25,9 +25,21 @@ class Admin:
         else:
             raise ValueError(f"Sheet with number {sheet_number_str} not found")
         
-    def begin():
+    def begin(self):
+        project_name = input("Enter project name: ")
+        os.environ['project_name'] = project_name
+        print("\033[32mInitialization...  :  \033[0m",project_name)
         # Add a loading animation
-        print("Creating files...")
+        print("\033[32mInitialization...\033[0m")
+        print("\033[32mCreating catalog.....\033[0m")
+        print("\033[32mCreating dossier...\033[0m")
+        print("\033[32mWritting contents...\033[0m")
+       
+       
+        for _ in tqdm(range(10), desc="Progress", unit="file"):
+             sleep(0.1)
+        print("\033[32mCreating Private key...\033[0m")
+        print("\033[32mCreating public key...\033[0m")
         for _ in tqdm(range(10), desc="Progress", unit="file"):
             sleep(0.1)  # Simulating some work
 
@@ -41,7 +53,7 @@ class Admin:
 
             # Instantiate the Admin class
             admin_instance = Admin()
-            os.environ['SHEET_NUMBER'] = ''
+            os.environ['SHEET_NUMBER'] = '0'
             # Access the variables from the admin instance
             credentials_path = admin_instance.credentials_path
             sheetNumber = os.environ.get('SHEET_NUMBER')
@@ -58,22 +70,39 @@ class Admin:
             credentials_path: credentials.json
             storage_bucket: 
             sheets:
-            - sheet_number: 
+             - sheet_number: '0'
+                sheet_name: 'None'
+                sheet_url: 'None'  
+                #Start project from here                        
+             - sheet_number: 
                 sheet_name: 
                 sheet_url: 
         """)
-        catalog=os.makedirs('catalog')
-        os.path.join(catalog,'dossier.yaml')
-        with open('dossier.yaml','a') as file:
-            file.write("#dossier.yaml keeps track of file uploads")
+        PATH=['catalog','dossier']
+        for path in PATH:
+            path
+            if not os.path.exists(path):
+                os.makedirs(path)
+            catalog='catalog'
+            dossier='dossier'
+
+        
+        FILEPATH=[os.path.join(dossier,'publickey.pem'),os.path.join(catalog,'document.yaml')]
+        
+        
+        for filepath in FILEPATH:
+           with open(filepath,'w'):
+                pass
+        with open('document.yaml','a') as file:
+            file.write("#document.yaml keeps track of file uploads")
         # Write content to workfile.py
         with open('workfile.py', 'w') as file:
             file.write(workfile_content)
 
-        print("workfile.py created successfully.")
+        
 
         # Write content to app_config.yaml
         with open('app_config.yaml', 'w') as file:
             file.write(app_config_content)
 
-        print("app_config created successfully.")
+    

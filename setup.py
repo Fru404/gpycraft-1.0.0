@@ -16,6 +16,8 @@ setup(
         'pandas',
         'PyYAML',
         'tqdm',
+        'xlsxwriter',
+        'openpyxl',
     ],
     description='A Python package for manipulating google sheets directly on any coding platform and perform CRUD process easily. Sheets can be stored and retrieved in firebase storage',
     entry_points={
