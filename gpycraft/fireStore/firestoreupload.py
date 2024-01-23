@@ -23,12 +23,6 @@ from logging.handlers import RotatingFileHandler
 
 
 
-
-
-
-
-
-
 # Set the optimal logging level (adjust as needed)
 logging.basicConfig(level=logging.INFO)
 
@@ -57,17 +51,6 @@ file_handler.setFormatter(formatter)
 
 # Add the file handler to the logger
 logger.addHandler(file_handler)
-
-
-
-
-
-
-
-
-
-
-
 
 
 

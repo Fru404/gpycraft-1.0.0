@@ -7,7 +7,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='gpycraft',
-    version='1.0.1',
+    version='1.0.2',
     packages=find_packages(),
     install_requires=[
         'firebase-admin',
@@ -18,6 +18,7 @@ setup(
         'tqdm',
         'xlsxwriter',
         'openpyxl',
+        
     ],
     description='A Python package for manipulating google sheets directly on any coding platform and perform CRUD process easily. Sheets can be stored and retrieved in firebase storage',
     entry_points={
