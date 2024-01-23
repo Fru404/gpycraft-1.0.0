@@ -5,7 +5,7 @@ from time import sleep
 import textwrap
 
 class Admin:
-    def __init__(self):
+    def __init__(self) -> None:
         with open('app_config.yaml', 'r') as admin_credentials:
             admin_credentials_data = yaml.safe_load(admin_credentials)
 
@@ -24,11 +24,11 @@ class Admin:
             return self.sheets[sheet_number_str]['sheet_url']
         else:
             raise ValueError(f"Sheet with number {sheet_number_str} not found")
-        
-    def begin(self):
+    
+    def begin():
         project_name = input("Enter project name: ")
         os.environ['project_name'] = project_name
-        print("\033[32mInitialization...  :  \033[0m",project_name)
+        print("\033[32mbegin  :  \033[0m",project_name  )
         # Add a loading animation
         print("\033[32mInitialization...\033[0m")
         print("\033[32mCreating catalog.....\033[0m")
@@ -80,9 +80,12 @@ class Admin:
         """)
         PATH=['catalog','dossier']
         for path in PATH:
+            
             path
             if not os.path.exists(path):
                 os.makedirs(path)
+            else:
+              print(f'{path} already exist....')
             catalog='catalog'
             dossier='dossier'
 
@@ -91,18 +94,28 @@ class Admin:
         
         
         for filepath in FILEPATH:
-           with open(filepath,'w'):
-                pass
-        with open('document.yaml','a') as file:
-            file.write("#document.yaml keeps track of file uploads")
+           if os.path.exists(filepath):
+            print(f'{filepath} already exist ....')
+            pass
+           else:
+                with open(filepath,'w'):
+                        pass
+            
+        if os.path.exists('workfile.py'):
+            print('workfile already present.......')
+            pass
+        else:
         # Write content to workfile.py
-        with open('workfile.py', 'w') as file:
-            file.write(workfile_content)
+            with open('workfile.py', 'w') as file:
+                file.write(workfile_content)
 
         
-
+        if os.path.exists('app_config.yaml'):
+         print('app_config already present...')
+         pass
+        else:
         # Write content to app_config.yaml
-        with open('app_config.yaml', 'w') as file:
-            file.write(app_config_content)
+            with open('app_config.yaml', 'w') as file:
+                file.write(app_config_content)
 
     
