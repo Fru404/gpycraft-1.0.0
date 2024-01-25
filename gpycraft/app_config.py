@@ -11,7 +11,7 @@ class Admin:
 
             self.credentials_path = admin_credentials_data['credentials_path']
             self.storage_bucket = admin_credentials_data['storage_bucket']
-
+            
             # Store sheets in a dictionary for easy lookup
             self.sheets = {str(sheet['sheet_number']): sheet for sheet in admin_credentials_data['sheets']}
     
