@@ -91,24 +91,29 @@ class gsheetsdb:
 
             :return: Pandas DataFrame.
             """
-            credentials_path = self.admin_instance.credentials_path
-            sheetNumber = os.environ.get('SHEET_NUMBER')
-            sheet_url = self.admin_instance.sheet_url(sheetNumber)
-            # Set up authentication and authorization
-            scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-            creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_path, scope)
-            client = gspread.authorize(creds)
-            spreadsheet = client.open_by_url(sheet_url)
-            self.read_sheet()
-            
-            # Get the first (default) sheet
-            sheet = spreadsheet.sheet1
+            try:
+                credentials_path = self.admin_instance.credentials_path
+                sheetNumber = os.environ.get('SHEET_NUMBER')
+                sheet_url = self.admin_instance.sheet_url(sheetNumber)
+                # Set up authentication and authorization
+                scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+                creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_path, scope)
+                client = gspread.authorize(creds)
+                spreadsheet = client.open_by_url(sheet_url)
+                self.read_sheet()
+                
+                # Get the first (default) sheet
+                sheet = spreadsheet.sheet1
 
-            # Get all values from the sheet
-            all_values = sheet.get_all_values()
-            # Convert the list of dictionaries to a Pandas DataFrame
-            df = pd.DataFrame(all_values[1:], columns=all_values[0])
-            return df
+                # Get all values from the sheet
+                all_values = sheet.get_all_values()
+                # Convert the list of dictionaries to a Pandas DataFrame
+                df = pd.DataFrame(all_values[1:], columns=all_values[0])
+                return df
+            except gspread.exceptions.APIError as e:
+               print(f"APIError: {e.response}")
+               print('Make Sure sheet number in app_config.yaml is a string')
+               raise
 
 
     def in_json(self, target_key=None, num_rows=None, start_index=None, end_index=None):
@@ -166,8 +171,10 @@ class gsheetsdb:
             return
 
         try:
+
             print(f" {save_as} successfully  saved ")
-            return df.to_excel(save_as, index=False)  # Save DataFrame to Excel
+            return df.to_excel(save_as, index=False,engine='openpyxl')  # Save DataFrame to Excel
             
         except Exception as e:
             print(f"Error saving DataFrame to Excel: {e}")
+            print('Check if save as ends with .xlsx')
