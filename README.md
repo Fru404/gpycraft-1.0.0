@@ -1,8 +1,9 @@
-<p align="center"><span style="font-size: 36px; font-family: 'Old English Text MT', Times, serif; color: red;">GpyCraft</span></p>
+<p align="center"><span style="font-size: 48px; font-family: 'Old English Text MT', Times, serif; color: red;">GpyCraft</span></p>
 
 
 
-<img src="https://raw.githubusercontent.com/Fru404/Web/main/1497441839.svg" alt="SVG" width="200" height="200">
+
+<img align="center" src="https://raw.githubusercontent.com/Fru404/Web/main/1497441839.svg" alt="SVG" width="200" height="200">
 
 This python module makes it possible to manipulate google sheets or any sheets stored in firebase storage. It allows for manipulation and display sheet data in a convenient way for analysis. It supports creation of API to google sheet
 
