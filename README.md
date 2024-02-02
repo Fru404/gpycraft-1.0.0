@@ -1,26 +1,26 @@
+<link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet'>
+
+<h1 align="center" style="color: red; font-family: 'MedievalSharp'; font-size: 22px;">GPYCRAFT</h1>
+
 <svg fill="none" viewBox="0 0 600 300" width="600" height="300" xmlns="http://www.w3.org/2000/svg">
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         .container {
           display: flex;
-          justify-content: center;
-          align-items: center;
           width: 100%;
-          height: 100%;
+          height: 300px;
           background-color: black;
           color: white;
         }
       </style>
 
       <div class="container">
-        <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet'/>
-        <h1 style="color: red; font-family: 'MedievalSharp', serif; font-size: 22px;">GPYCRAFT</h1>
+        <h1>Hi there, my name is Nikola 👋</h1>
       </div>
     </div>
   </foreignObject>
 </svg>
-
 
 
 <p align="center">
