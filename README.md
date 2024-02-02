@@ -1,12 +1,12 @@
-Google Sheets Database and Firestore Upload
-This Python script provides a simple interface to interact with Google Sheets as a database and upload files to Firebase Storage. The functionality is divided into two classes - gsheetsdb for handling Google Sheets operations and FireStoreUpload for handling Firebase Storage uploads.
+GPYCRAFT 
 
-gsheetsdb Class
-Initialization
-python
-Copy code
-from googlepycraft.googleSheet.gsheetsdb import gsheetsdb
-Initialize the gsheetsdb class with the path to your Google Sheets service account credentials JSON file and the URL of the Google Sheets document.
+<img src="https://raw.githubusercontent.com/Fru404/Web/main/1497441839.svg" alt="SVG" width="200" height="200">
+
+This python module makes it possible to manipulate google sheets or any sheets stored in firebase storage. It allows for manipulation and display sheet data in a convenient way for analysis. It supports creation of API to google sheet
+
+Before Starting it is neccessary to have credentials.json file found in Google cloud platform and make sure the google sheet link is shareable
+
+
 
 python
 Copy code
