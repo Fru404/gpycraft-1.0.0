@@ -1,20 +1,5 @@
-<!-- README.md -->
+<p align="center"><span style="font-size: 36px; font-family: 'Old English Text MT', Times, serif; color: red;">GpyCraft</span></p>
 
-<!-- Add CSS styles -->
-<style>
-  /* Apply medieval text style */
-  .medieval-text {
-    font-family: 'Garamond', serif; /* Use a medieval-style font */
-    font-size: 24px; /* Adjust font size as needed */
-    fill: red; /* Set the text color to red */
-  }
-</style>
-
-<!-- Embed the SVG with a class for styling -->
-<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="medieval-text">
-  <!-- Replace the content of the SVG with your desired text -->
-  <text x="10" y="40">GPYCRAFT</text>
-</svg>
 
 
 <img src="https://raw.githubusercontent.com/Fru404/Web/main/1497441839.svg" alt="SVG" width="200" height="200">
