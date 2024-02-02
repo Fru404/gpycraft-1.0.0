@@ -1,5 +1,6 @@
-<p align="center"> **GPYCRAFT**</p>
+<link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet'>
 
+<h1 align="center" style="color: red; font-family: 'MedievalSharp'; font-size: 22px;">GPYCRAFT</h1>
 
 
 
