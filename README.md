@@ -16,13 +16,7 @@ Before Starting it is neccessary to have credentials.json file found in Google c
 
 
 
-python
-Copy code
-db = gsheetsdb(credentials_path='path/to/credentials.json', sheet_url='https://docs.google.com/spreadsheets/d/your_spreadsheet_id/edit')
-Reading Data from Google Sheets
-read_sheet Method
-python
-Copy code
+
 # Read data from Google Sheets
 data = db.read_sheet(key='column_name', number_of_rows=5, start_index=1, end_index=10)
 key: The column name to filter data by.
