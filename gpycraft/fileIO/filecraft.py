@@ -55,7 +55,7 @@ class filecraft:
             file.write(dotfile_content)
 
 
-
+    #converting xl to a dotfile
     def xl_asdotfile(self, xl_filePath='', column=None, engine='openpyxl', spacing=10):
         self.xl_filePath = xl_filePath  # path to excel file
         separation = radix()
