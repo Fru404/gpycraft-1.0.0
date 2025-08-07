@@ -7,7 +7,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='gpycraft',
-    version='1.0.2',
+    version='1.0.3',
     packages=find_packages(),
     install_requires=[
         'firebase-admin',

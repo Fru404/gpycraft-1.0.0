@@ -79,7 +79,7 @@ class gsheetsdb:
                     else:
                         print(f"{key}: Not found in row")
 
-            return None
+            return rows_to_return
 
         except gspread.exceptions.APIError as e:
             print(f"APIError: {e.response}")

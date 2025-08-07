@@ -66,18 +66,19 @@ class Admin:
         """)
 
         # Content to be written in app_config.yaml
-        app_config_content = textwrap.dedent("""
+        app_config_content = textwrap.dedent("""\
             credentials_path: credentials.json
             storage_bucket: 
             sheets:
-             - sheet_number: '0'
+            - sheet_number: '0'
                 sheet_name: 'None'
-                sheet_url: 'None'  
-                #Start project from here                        
-             - sheet_number: 
+                sheet_url: 'None'
+                # Start project from here
+            - sheet_number: 
                 sheet_name: 
                 sheet_url: 
-        """)
+            """)
+
         PATH=['catalog','dossier']
         for path in PATH:
             
